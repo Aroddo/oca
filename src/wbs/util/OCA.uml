@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLLabProfile="http:///schemas/UMLLabProfile/NS/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/UMLLabProfile/NS/0 pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile">
+  <uml:Model xmi:id="_oKFEYIr3EeqLIJyg06uYPA" name="OCA">
+    <eAnnotations xmi:id="_bYz0gIr7EeqKXPJ7aZvqfQ" source="http://ns.yatta.de/umllab">
+      <contents xmi:type="ecore:EAnnotation" xmi:id="_bYz0gYr7EeqKXPJ7aZvqfQ" source="codegen">
+        <details xmi:id="_bYz0gor7EeqKXPJ7aZvqfQ" key="AssociatedSourceCode" value="/OCA/generated/Person.java;3115607207/1;/OCA/generated/Kunde.java;1612821171/1;/OCA/generated/Angestellter.java;444362030/1;/OCA/generated/Firma.java;854952929/1;"/>
+      </contents>
+    </eAnnotations>
+    <elementImport xmi:id="_3UtbgIr3EeqLIJyg06uYPA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+    </elementImport>
+    <elementImport xmi:id="_3UuCkIr3EeqLIJyg06uYPA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+    </elementImport>
+    <elementImport xmi:id="_3UupoIr3EeqLIJyg06uYPA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+    </elementImport>
+    <elementImport xmi:id="_3UvQsIr3EeqLIJyg06uYPA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+    </elementImport>
+    <elementImport xmi:id="_3UvQsYr3EeqLIJyg06uYPA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+    </elementImport>
+    <elementImport xmi:id="_3Uv3wIr3EeqLIJyg06uYPA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+    </elementImport>
+    <elementImport xmi:id="_3Uv3wYr3EeqLIJyg06uYPA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+    </elementImport>
+    <elementImport xmi:id="_3Uwe0Ir3EeqLIJyg06uYPA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#short"/>
+    </elementImport>
+    <elementImport xmi:id="_3XZjIIr3EeqLIJyg06uYPA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </elementImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_rhuVoIr3EeqLIJyg06uYPA" name="Person">
+      <ownedAttribute xmi:id="_67swUIr3EeqLIJyg06uYPA" name="name">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_-f4owIr3EeqLIJyg06uYPA" name="geburtstag">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_BieQAIr4EeqLIJyg06uYPA" name="getAlter">
+        <ownedParameter xmi:id="_EvatIIr4EeqLIJyg06uYPA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_-f8TIIr3EeqLIJyg06uYPA" name="Date"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_PCpQcIr4EeqLIJyg06uYPA" name="Kunde">
+      <generalization xmi:id="_UFPnoIr4EeqLIJyg06uYPA" general="_rhuVoIr3EeqLIJyg06uYPA"/>
+      <ownedAttribute xmi:id="_c1jmsIr4EeqLIJyg06uYPA" name="kundennummer">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_VKDTkIr4EeqLIJyg06uYPA" name="Angestellter">
+      <generalization xmi:id="_W-wycIr4EeqLIJyg06uYPA" general="_rhuVoIr3EeqLIJyg06uYPA"/>
+      <ownedAttribute xmi:id="_fKs5IIr4EeqLIJyg06uYPA" name="personalnummer">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_SQVNEYr7EeqKXPJ7aZvqfQ" name="firma" type="_KimFUIr7EeqKXPJ7aZvqfQ" association="_SQVNEIr7EeqKXPJ7aZvqfQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SQWbMIr7EeqKXPJ7aZvqfQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SQWbMYr7EeqKXPJ7aZvqfQ" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_KimFUIr7EeqKXPJ7aZvqfQ" name="Firma">
+      <ownedAttribute xmi:id="_MN3UUIr7EeqKXPJ7aZvqfQ" name="name">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_SQWbMor7EeqKXPJ7aZvqfQ" name="angestellter" type="_VKDTkIr4EeqLIJyg06uYPA" association="_SQVNEIr7EeqKXPJ7aZvqfQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SQWbM4r7EeqKXPJ7aZvqfQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SQWbNIr7EeqKXPJ7aZvqfQ" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_SQVNEIr7EeqKXPJ7aZvqfQ" name="" memberEnd="_SQVNEYr7EeqKXPJ7aZvqfQ _SQWbMor7EeqKXPJ7aZvqfQ"/>
+    <profileApplication xmi:id="_-gYYAIr3EeqLIJyg06uYPA">
+      <eAnnotations xmi:id="_-gdQgIr3EeqLIJyg06uYPA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLLabProfile:UnresolvedElement xmi:id="_-gklQIr3EeqLIJyg06uYPA" base_Element="_-f8TIIr3EeqLIJyg06uYPA"/>
+</xmi:XMI>
