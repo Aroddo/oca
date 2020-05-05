@@ -53,7 +53,7 @@ public class NumberUtil {
 		return bruchWert;
 	}
 
-	public static List<Long> teiler(long zahl) {
+	public static List<Long> teiler(long zahl) throws ArithmeticException {
 		long teiler1;		
 		List<Long> list = Arrays.asList();
 		

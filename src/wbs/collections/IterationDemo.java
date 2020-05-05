@@ -64,14 +64,18 @@ public class IterationDemo {
 		liste.forEach( n -> System.out.print(n + "  "));
 
 		/*
-		 * Variante 6: foreach und merhod reference
+		 * Variante 6: foreach und method reference
 		 */
 		System.out.println("\n\nVariante 6:");
 		liste.forEach(System.out::print);
 		
 		
+		/*
+		 * Variante 6b mit eigener Klasse
+		 */
 		System.out.println("\n\nVariante 6b:");
 		liste.forEach(MyConsumer::print);
+		liste.forEach(MyConsumer::println);
 	}
 
 }
@@ -79,10 +83,12 @@ public class IterationDemo {
 class MyConsumer implements Consumer<Integer> {
 	@Override
 	public void accept(Integer i) {
+		System.out.print("accept: " + i + " ");
+	}
+	public static void print (Integer i) {
 		System.out.print(i + " ");
 	}
-	public static void  print (Integer i) {
-		System.out.print(i + " ");
-	}
-	
+	public static void println (Integer i) {
+		System.out.println(i + " ");
+	}	
 }

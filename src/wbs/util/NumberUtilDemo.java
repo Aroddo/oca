@@ -22,9 +22,16 @@ public class NumberUtilDemo {
 		}
 		
 		
-		List<Long> list = NumberUtil.teiler(100);
+//		List<Long> list = NumberUtil.teiler(100);
 //		Arrays.asList(10,28,100).forEach(n -> System.out.println(NumberUtil.teiler(n)));
 		
+		
+		Integer a = Integer.valueOf(1);
+		Integer b = Integer.valueOf(2);
+		b = b.valueOf(1);
+		
+		System.out.println(a.equals(b));
+		System.out.println(a == b);
 		
 		
 	}
