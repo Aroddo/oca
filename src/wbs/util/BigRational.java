@@ -76,7 +76,9 @@ import java.math.BigDecimal;
 /*
  * toString();
  */
+
 // welche methoden und konstruktoren sollte die klasse anbieten?
+
 
 // welche typen sollten die parameter der methoden / konstruktoren haben?
 
