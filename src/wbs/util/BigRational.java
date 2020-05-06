@@ -135,7 +135,8 @@ public class BigRational extends java.lang.Number implements Comparable<BigRatio
 		// liegt
 
 		// TODO bruch kürzen
-		BigInteger ggT = numerator.gcd(denominator);
+		BigIn
+		teger ggT = numerator.gcd(denominator);
 		if (denominator.equals(BigInteger.ZERO))
 			throw new ArithmeticException("NULL im Zähler? Tsktsktsk.");
 		if (!numerator.equals(BigInteger.ZERO)) { // Bei numerator = 0 wollen wir den Bruch 0/1 haben
