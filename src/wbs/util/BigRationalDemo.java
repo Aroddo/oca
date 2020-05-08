@@ -42,5 +42,9 @@ public class BigRationalDemo {
 		System.out.println(zweiDrittel + "  compareTo  " + zweiDrittel + "  =  " + zweiDrittel.compareTo(zweiDrittel));
 		System.out.println(zweiDrittel + "  compareTo  " + dreiViertel + "  =  " + zweiDrittel.compareTo(dreiViertel));
 		System.out.println(dreiViertel + "  compareTo  " + zweiDrittel + "  =  " + dreiViertel.compareTo(zweiDrittel));
+		
+		System.out.println(zweiDrittel + " ^  0 = " + zweiDrittel.pow(0));
+		System.out.println(zweiDrittel + " ^  2 = " + zweiDrittel.pow(2));
+		System.out.println(zweiDrittel + " ^ -2 = " + zweiDrittel.pow(-2));
 	}
 }

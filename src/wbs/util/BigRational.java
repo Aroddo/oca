@@ -2,6 +2,7 @@ package wbs.util;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.Objects;
 
 /*
  * die nachstehende klasse BigRational soll das exakte rechnen mit bruchzahlen ermöglichen.
@@ -227,7 +228,7 @@ public class BigRational extends java.lang.Number implements Comparable<BigRatio
 	@Override
 	public int hashCode() {
 		// TODO Auto-generated method stub
-		return super.hashCode();
+		return Objects.hash(numerator,denominator);
 	}
 
 	@Override
@@ -330,7 +331,20 @@ public class BigRational extends java.lang.Number implements Comparable<BigRatio
 		return this.multiply(r.inverse());
 	}
 
+	/**
+	 * Exponential operation on fraction
+	 * 
+	 * @param n the exponent 
+	 * @return result of exponential operation as BigRational
+	 * @throws ArithmeticException
+	 */
 	public BigRational pow(int n) throws ArithmeticException {
-		return this;
+		if (n==0) {
+			return new BigRational(1,1);
+		} else if (n>0) {
+			return  new BigRational(numerator.pow(n), denominator.pow(n) );
+		} else {
+			return new BigRational(denominator.pow(-n),numerator.pow(-n) );			
+		}
 	}
 }
