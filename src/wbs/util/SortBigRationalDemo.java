@@ -42,5 +42,8 @@ public class SortBigRationalDemo {
 				+ fractionList.get(0).equals(fractionList.get(1)));
 		System.out.println(fractionList.get(0) + " equals " + fractionList.get(10) + " => "
 				+ fractionList.get(0).equals(fractionList.get(10)));
+		
+		
+		fractionList.forEach(fraction -> System.out.println(fraction.getNumerator() + " : " + fraction.getNumerator().hashCode() + " : " + fraction.hashCode() ));
 	}
 }
