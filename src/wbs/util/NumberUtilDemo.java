@@ -21,10 +21,8 @@ public class NumberUtilDemo {
 			}
 		}
 		
-		
 //		List<Long> list = NumberUtil.teiler(100);
 //		Arrays.asList(10,28,100).forEach(n -> System.out.println(NumberUtil.teiler(n)));
-		
 		
 		Integer a = Integer.valueOf(1);
 		Integer b = Integer.valueOf(2);
@@ -32,8 +30,5 @@ public class NumberUtilDemo {
 		
 		System.out.println(a.equals(b));
 		System.out.println(a == b);
-		
-		
 	}
-
 }

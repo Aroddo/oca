@@ -99,6 +99,18 @@ import java.math.BigInteger;
  * 		zaehler, nenner		-	bruch / bruch als zaehler/nenner
  * 		zaehler 			-	bruch /	zaehler/1	
  */
+// welche methoden und konstruktoren sollte die klasse anbieten?
+/*
+ * Constructor: BigInteger zaehler, BigInteger nenner Constructor: BigRational
+ * 
+ * add BigRational - bruch + bruch zaehler, nenner - bruch + bruch als
+ * zaehler/nenner zaehler - bruch + zaehler/1 subtract BigRational - bruch -
+ * bruch zaehler, nenner - bruch - bruch als zaehler/nenner zaehler - bruch -
+ * zaehler/1 multiply BigRational - bruch * bruch zaehler, nenner - bruch *
+ * bruch als zaehler/nenner zaehler - bruch * zaehler/1 divide BigRational -
+ * bruch / bruch zaehler, nenner - bruch / bruch als zaehler/nenner zaehler -
+ * bruch / zaehler/1
+ */
 
 // welche typen sollten die parameter der methoden / konstruktoren haben?
 
@@ -135,8 +147,7 @@ public class BigRational extends java.lang.Number implements Comparable<BigRatio
 		// liegt
 
 		// TODO bruch kürzen
-		BigIn
-		teger ggT = numerator.gcd(denominator);
+		BigInteger ggT = numerator.gcd(denominator);
 		if (denominator.equals(BigInteger.ZERO))
 			throw new ArithmeticException("NULL im Zähler? Tsktsktsk.");
 		if (!numerator.equals(BigInteger.ZERO)) { // Bei numerator = 0 wollen wir den Bruch 0/1 haben
@@ -167,30 +178,6 @@ public class BigRational extends java.lang.Number implements Comparable<BigRatio
 		return denominator;
 	}
 
-	public BigRational add(BigRational r) {
-		// TODO implementieren
-		return r;
-	}
-
-	public BigRational subtract(BigRational r) {
-		// TODO implementieren
-		return r;
-	}
-
-	public BigRational multiply(BigRational r) {
-		// TODO implementieren
-		return r;
-	}
-
-	public BigRational divide(BigRational r) throws ArithmeticException {
-		// TODO implementieren
-		return r;
-	}
-
-	public BigRational pow(int n) throws ArithmeticException {
-		return this;
-	}
-
 	public static BigRational valueOf(String s) throws ArithmeticException, NumberFormatException {
 		BigInteger numerator;
 		BigInteger denominator;
@@ -204,14 +191,6 @@ public class BigRational extends java.lang.Number implements Comparable<BigRatio
 			denominator = new BigInteger(s.substring(pos + 1));
 		}
 		return new BigRational(numerator, denominator);
-	}
-
-	public BigRational inverse() throws ArithmeticException {
-		return this;
-	}
-
-	public BigRational negate() {
-		return this;
 	}
 
 	@Override
@@ -240,8 +219,9 @@ public class BigRational extends java.lang.Number implements Comparable<BigRatio
 
 	@Override
 	public int compareTo(BigRational o) {
-		// TODO Auto-generated method stub
-		return 0;
+		BigInteger z1 = this.numerator.multiply(o.getDenominator());
+		BigInteger z2 = o.getNumerator().multiply(this.denominator);
+		return z1.compareTo(z2);
 	}
 
 	@Override
@@ -252,15 +232,105 @@ public class BigRational extends java.lang.Number implements Comparable<BigRatio
 
 	@Override
 	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
-		return super.equals(obj);
+		boolean b = false;
+		if (obj != null) {
+			if (obj instanceof BigRational) {
+				if (this.numerator.equals(((BigRational) obj).getNumerator())
+						& this.denominator.equals(((BigRational) obj).getDenominator())) {
+					b = true;
+				}
+			}
+		}
+		return b;
 	}
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		String s = this.numerator + " / " + this.denominator;
+		String s = " ";
+		if (this.numerator.signum() < 0) {
+			s = "";
+		}
+		s = s + this.numerator + "/" + this.denominator;
 		return s;
 	}
 
+	public double toDouble() {
+		return this.toDouble(2);
+	}
+
+	public double toDouble(int stellen) {
+		return Math.round(
+				(numerator.doubleValue() / denominator.doubleValue()) * Math.pow(10, stellen))
+				/ Math.pow(10, stellen);
+	}
+
+	/*
+	 * Arithmetische Methoden
+	 */
+	/**
+	 * Returns the inverse of this fraction as BigRational
+	 * 
+	 * @return inverted BigRational
+	 * @throws ArithmeticException
+	 */
+	public BigRational inverse() throws ArithmeticException {
+		return new BigRational(this.denominator, this.numerator);
+	}
+
+	/**
+	 * Returns the negative value of this fraction
+	 * 
+	 * @return negated BigRational
+	 */
+	public BigRational negate() {
+		return new BigRational(this.numerator.negate(), this.denominator);
+	}
+
+	/**
+	 * Adds another fraction to this fraction.
+	 * 
+	 * @param r the fraction to be added
+	 * @return The sum of both fractions as BigRational
+	 */
+	public BigRational add(BigRational r) {
+		return new BigRational(
+				(this.getNumerator().multiply(r.getDenominator()))
+						.add(r.getNumerator().multiply(this.getDenominator())),
+				this.getDenominator().multiply(r.getDenominator()));
+	}
+
+	/**
+	 * Subtracts another fraction from this fraction.
+	 * 
+	 * @param r the fraction to be subtracted
+	 * @return The subtracted result of both fractions as BigRational
+	 */
+	public BigRational subtract(BigRational r) {
+		return this.add(r.negate());
+	}
+
+	/**
+	 * Multiply this fraction with given fraction.
+	 * 
+	 * @param r the fraction to be multiplied with
+	 * @return The sum of both fractions as BigRational
+	 */
+	public BigRational multiply(BigRational r) {
+		return new BigRational((this.getNumerator().multiply(r.getNumerator())),
+				(this.getDenominator().multiply(r.getDenominator())));
+	}
+
+	/**
+	 * Divide this fraction by given fraction.
+	 * 
+	 * @param r the fraction dividing this fraction
+	 * @return
+	 */
+	public BigRational divide(BigRational r) {
+		return this.multiply(r.inverse());
+	}
+
+	public BigRational pow(int n) throws ArithmeticException {
+		return this;
+	}
 }

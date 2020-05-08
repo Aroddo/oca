@@ -30,5 +30,8 @@ public class ComparableDemo {
 		Person.setSortMode(2);
 		Collections.sort(personen);
 		personen.forEach(System.out::println);
+		
+ 
+		
 	}
 }

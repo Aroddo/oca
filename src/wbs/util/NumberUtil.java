@@ -72,17 +72,17 @@ public class NumberUtil {
 	 * entsprechen.
 	 * 
 	 */
-	public static List<Integer> collatz(int n) {
+	public static List<Integer> collatz(int n)  throws ArithmeticException {
 		List<Integer> list = new ArrayList<Integer>();
-		list.add(n);
-		while (n != 1) {
+		if (n < 1) throw new ArithmeticException("n muss grösser als 0 sein.");
+		do  {
+			list.add(n);
 			if (n % 2 == 0) {
 				n = n / 2;
 			} else {
 				n = n * 3 + 1;
 			}
-			list.add(n);
-		}
+		} while (n != 1);
 		return list;
 	}
 	 
