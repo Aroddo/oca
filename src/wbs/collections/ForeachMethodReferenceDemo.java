@@ -2,7 +2,7 @@ package wbs.collections;
 
 import java.util.Arrays;
 import java.util.List;
-
+//test
 public class ForeachMethodReferenceDemo {
 
 	public static void main(String[] args) {
