@@ -31,7 +31,14 @@ public class ComparableDemo {
 		Collections.sort(personen);
 		personen.forEach(System.out::println);
 		
- 
+		Person p = personen.get(0);
+		System.out.println(personen.get(0).hashCode());
+		personen.get(0).setName("ASDASD");
+		System.out.println(personen.get(0).hashCode());
+		
+		
+		System.out.println();
+		System.out.println( (new Person("AA","BB",11)).getName()    );
 		
 	}
 }

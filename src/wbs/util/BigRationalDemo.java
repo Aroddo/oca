@@ -28,6 +28,8 @@ public class BigRationalDemo {
 		
 		// Teste Grundrechenarten
 		
+		BigRational nullHalbe = BigRational.valueOf("0/2") ;
+		BigRational einHalb = BigRational.valueOf("1/2") ;
 		BigRational zweiDrittel = BigRational.valueOf("2/3") ;
 		BigRational dreiViertel = BigRational.valueOf("3/4") ;
 				
@@ -46,5 +48,13 @@ public class BigRationalDemo {
 		System.out.println(zweiDrittel + " ^  0 = " + zweiDrittel.pow(0));
 		System.out.println(zweiDrittel + " ^  2 = " + zweiDrittel.pow(2));
 		System.out.println(zweiDrittel + " ^ -2 = " + zweiDrittel.pow(-2));
+		
+		System.out.println(einHalb + " ^  0 = " + einHalb.pow(0));
+		System.out.println(einHalb + " ^  2 = " + einHalb.pow(2));
+		System.out.println(einHalb + " ^ -2 = " + einHalb.pow(-2));
+
+		System.out.println(nullHalbe + " ^  0 = " + nullHalbe.pow(0));
+		System.out.println(nullHalbe + " ^  2 = " + nullHalbe.pow(2));
+		System.out.println(nullHalbe + " ^ -2 = " + nullHalbe.pow(-2));
 	}
 }

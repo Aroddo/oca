@@ -133,7 +133,6 @@ public class BigRational extends java.lang.Number implements Comparable<BigRatio
 	private static final long serialVersionUID = 1L;
 
 	public BigRational(BigRational r) {
-		// TODO bruch kürzen
 		this.numerator = r.getNumerator();
 		this.denominator = r.getDenominator();
 	}
@@ -147,7 +146,6 @@ public class BigRational extends java.lang.Number implements Comparable<BigRatio
 		// wir müssen auch sicherstellen, dass ein eventuelles vorzeichen im zähler
 		// liegt
 
-		// TODO bruch kürzen
 		BigInteger ggT = numerator.gcd(denominator);
 		if (denominator.equals(BigInteger.ZERO))
 			throw new ArithmeticException("NULL im Zähler? Tsktsktsk.");
@@ -167,7 +165,6 @@ public class BigRational extends java.lang.Number implements Comparable<BigRatio
 	}
 
 	public BigRational(long numerator, long denominator) throws ArithmeticException {
-		// TODO bruch kürzen
 		this(BigInteger.valueOf(numerator), BigInteger.valueOf(denominator));
 	}
 
@@ -196,26 +193,24 @@ public class BigRational extends java.lang.Number implements Comparable<BigRatio
 
 	@Override
 	public int intValue() {
-		// TODO Auto-generated method stub
-		return 0;
+			
+		return (numerator.divide(denominator)).intValue();
 	}
 
 	@Override
 	public long longValue() {
-		// TODO Auto-generated method stub
-		return 0;
+		return (numerator.divide(denominator)).longValue();
 	}
 
 	@Override
 	public float floatValue() {
-		// TODO Auto-generated method stub
-		return 0;
+		return (numerator.divide(denominator)).floatValue();
 	}
 
 	@Override
 	public double doubleValue() {
-		// TODO Auto-generated method stub
-		return 0;
+//		return (numerator.divide(denominator)).doubleValue();
+		return numerator.doubleValue() / denominator.doubleValue();
 	}
 
 	@Override
@@ -227,7 +222,6 @@ public class BigRational extends java.lang.Number implements Comparable<BigRatio
 
 	@Override
 	public int hashCode() {
-		// TODO Auto-generated method stub
 		return Objects.hash(numerator,denominator);
 	}
 
@@ -330,6 +324,7 @@ public class BigRational extends java.lang.Number implements Comparable<BigRatio
 	public BigRational divide(BigRational r) {
 		return this.multiply(r.inverse());
 	}
+	
 
 	/**
 	 * Exponential operation on fraction
@@ -339,6 +334,7 @@ public class BigRational extends java.lang.Number implements Comparable<BigRatio
 	 * @throws ArithmeticException
 	 */
 	public BigRational pow(int n) throws ArithmeticException {
+		// TODO Exception vernünftig werfen.
 		if (n==0) {
 			return new BigRational(1,1);
 		} else if (n>0) {
