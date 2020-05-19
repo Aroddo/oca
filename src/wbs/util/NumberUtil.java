@@ -1,6 +1,7 @@
 package wbs.util;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -54,14 +55,35 @@ public class NumberUtil {
 	}
 
 	public static List<Long> teiler(long zahl) throws ArithmeticException {
-		long teiler1;		
+		long teiler1;
 		List<Long> list = Arrays.asList();
-		
-		for (long l = zahl/2; l > 1; l-- ) {
-			if (zahl % l == 0 ) {
+
+		for (long l = zahl / 2; l > 1; l--) {
+			if (zahl % l == 0) {
 				list.add(l);
-			}			
+			}
 		}
 		return list;
 	}
+
+	/*
+	 * wir schreiben die Methode collatz(). sie liefert zu irgendeiner positiven
+	 * ganzen zahl > 0 eine List mit allen zahlen, die der Collatzfolge dieser Zahl
+	 * entsprechen.
+	 * 
+	 */
+	public static List<Integer> collatz(int n)  throws ArithmeticException {
+		List<Integer> list = new ArrayList<Integer>();
+		if (n < 1) throw new ArithmeticException("n muss grösser als 0 sein.");
+		do  {
+			list.add(n);
+			if (n % 2 == 0) {
+				n = n / 2;
+			} else {
+				n = n * 3 + 1;
+			}
+		} while (n != 1);
+		return list;
+	}
+	 
 }

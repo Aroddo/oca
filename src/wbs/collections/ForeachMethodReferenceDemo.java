@@ -24,7 +24,6 @@ public class ForeachMethodReferenceDemo {
 		liste.forEach( n -> System.out.print(n + "  "));
 		
 	}
-
 }
 
 class StaticMethodProvider {
