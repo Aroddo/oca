@@ -33,7 +33,7 @@ public class LottoUtilDemo {
 		for (int[] zahlen : listOfintArrays) {
 			try {
 				System.out.println("Übergeben: " + Arrays.toString(zahlen));
-				System.out.println("Ergebnis: " + LottoUtil.createTipp6(zahlen));
+				System.out.println("Ergebnis: " + LottoUtilOld.createTipp6(zahlen));
 			} catch (IllegalArgumentException ex) {
 				System.out.println(ex.getMessage());
 			} finally {

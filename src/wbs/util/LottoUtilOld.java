@@ -9,7 +9,7 @@ import java.util.TreeSet;
 
 // wir schreiben die methode randomTipp(). sie liefert 6 verschiedene zahlen
 // zwischen 1 und 49 in geeigneter Form.
-public class LottoUtil {
+public class LottoUtilOld {
 
 	// variante 1: wir liefern ein sortiertes set von Integer
 	public static NavigableSet<Integer> createTipp1() {

@@ -72,10 +72,11 @@ public class NumberUtil {
 	 * entsprechen.
 	 * 
 	 */
-	public static List<Integer> collatz(int n)  throws ArithmeticException {
+	public static List<Integer> collatz(int n) throws ArithmeticException {
 		List<Integer> list = new ArrayList<Integer>();
-		if (n < 1) throw new ArithmeticException("n muss grösser als 0 sein.");
-		do  {
+		if (n < 1)
+			throw new ArithmeticException("n muss grösser als 0 sein.");
+		do {
 			list.add(n);
 			if (n % 2 == 0) {
 				n = n / 2;
@@ -85,5 +86,19 @@ public class NumberUtil {
 		} while (n != 1);
 		return list;
 	}
-	 
+
+	// Primfaktorzerlegung
+	public static List<Integer> primfaktoren(int zahl) throws IllegalArgumentException {
+		if (zahl < 1) {
+			throw new IllegalArgumentException("invalid argument: zahl must be greater than zero");
+		}
+		List<Integer> result = new ArrayList<>();
+		for (int teiler = 2; zahl != 1; teiler++) {
+			for (; zahl % teiler == 0; zahl /= teiler) {
+				result.add(teiler);
+			}
+		}
+		return result;
+	}
+
 }
