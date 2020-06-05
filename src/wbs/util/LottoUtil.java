@@ -12,46 +12,7 @@ import java.util.TreeSet;
 import java.util.function.Consumer;
 
 public class LottoUtil {
-	public static void main(String[] args) {
-		Long tipp5 = createTipp5();
-		String bitString;
-		String padding;
 
-		System.out.println("          \t|5         4         3         2         1         |");
-		for (int i = 1; i < 100; i++) {
-			tipp5 = createTipp5();
-			bitString = Long.toBinaryString(tipp5);
-			try {
-				System.out.print("Lösung 1: \t");
-				padding = "|" + String.format("%" + (50 - bitString.length()) + "s", "").replace(" ", "0");
-				System.out.println(padding + bitString + "|\t" + tipp5);
-			} catch (FormatFlagsConversionMismatchException e) {
-				System.out.println("FormatFlagsConversionMismatchException: " + e.getMessage());
-				System.out.print("Lösung 2: \t");
-				padding = "|" + String.join("", Collections.nCopies(50 - bitString.length(), "0"));
-				System.out.println(padding + bitString + "|\t" + tipp5);
-			}
-		}
-		/*
-		 * System.out.print("Lösung 2: \t"); padding = "|" + String.join("",
-		 * Collections.nCopies(50 - bitString.length(), "0"));
-		 * System.out.println(padding + bitString + "|\t" + tipp5);
-		 * 
-		 * System.out.print("Lösung 3: \t"); padding = "|" + CharBuffer.allocate(50 -
-		 * bitString.length()).toString().replace("\0", "0"); System.out.println(padding
-		 * + bitString + "|\t" + tipp5);
-		 * 
-		 * System.out.print("Lösung 4: \t"); padding = "|" + new String(new char[50 -
-		 * bitString.length()]).replace('\0', '0'); System.out.println(padding +
-		 * bitString + "|\t" + tipp5);
-		 */
-//		System.out.println( "#".repeat(10) );
-//		System.out.println( String.join("", Collections.nCopies(10, "#")) );         // Lösung 1
-//		System.out.println( String.format("%10s", "").replace(" ", "#") );           // Lösung 2
-//		System.out.println( CharBuffer.allocate(10).toString().replace("\0", "#") ); // Lösung 3
-//		System.out.println( new String(new char[10]).replace('\0', '#') );           // Lösung 4
-
-	}
 	// wir schreiben die methode randomTipp(). sie liefert 6 verschiedene zahlen
 	// zwischen 1 und 49 in geeigneter form.
 
@@ -60,6 +21,7 @@ public class LottoUtil {
 	// variante 1: wir liefern ein sortiertes set von Integer
 	// methodenname: createTipp1()
 
+	
 	// für die zufallszahlen können wir mit der klasse Random oder
 	// der methode Math.random() arbeiten
 	public static NavigableSet<Integer> createTipp1() {
@@ -105,6 +67,7 @@ public class LottoUtil {
 		return bits;
 	}
 
+	
 	// die methode liefert ein set mit 6 verschiedenen zahlen zwischen 1 und 49.
 	// der aufrufer kann bis zu 6 zahlen vorgeben, die fehlenden zahlen werden
 	// per randomizer erzeugt.
@@ -130,16 +93,32 @@ public class LottoUtil {
 		return tipp;
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
 	/*
 	 * wir schreiben die methode isValidTipp(). sie prüft, ob ein long-wert einem
 	 * gültigen tipp entspricht (also genau 6 einserbits an positionen zwischen 1
 	 * und 49 hat).
 	 */
 	public static boolean isValidTipp(long zahl) {
-		// TODO
-		return false;
+		return zahl >= 126 && zahl <= 554_153_860_399_104L && Long.bitCount(zahl) == 6;
+//		return zahl > 1 && Long.bitCount(zahl) == 6 && Long.highestOneBit(zahl) < (1 << 50)  && (zahl & 1L) == 0;  
+//		return zahl > 1 && Long.bitCount(zahl) == 6 && Long.highestOneBit(zahl) < (1L << 50);
 	}
 
+	
+	
+	
+	
+	
+	
+	
 	// wir schreiben die methode tippAsString(). sie liefert zu einem als
 	// long-wert gegebenen tipp eine brauchbare string-repräsentation.
 	// bsp.:
