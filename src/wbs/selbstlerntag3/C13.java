@@ -7,9 +7,8 @@ import java.util.function.Predicate;
 public class C13 {
 	public static void main(String[] args) {
 		List<Integer> numbers = new ArrayList<>();
-		Predicate<Number> p = n -> {
-			n.intValue() > 4
-		};
+		Predicate<Number> p = n -> n.intValue() > 4;
+
 
 		numbers.add(1);
 		numbers.add(2);

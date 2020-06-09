@@ -28,22 +28,15 @@ public class GroupingByDemo {
 		// Map mit key == Partei
 		Map<String, Set<Abgeordneter>> abgeordnetenMap = new LinkedHashMap<>();
 		
-		
-		abgeordnetenMap = mergeBy(abgeordnetenSet, 
-				(k,v) -> ;
-			)
+
+		abgeordnetenMap =  GroupingByDemo.groupBy(abgeordnetenSet,abgeordneter -> abgeordneter.getPartei());
 
 	}
 
 	public static <T> Map<String, Set<T>> groupBy(Set<T> sourceSet, Function<T,String> function) {
 		Map<String,Set<T>> returnMap = new LinkedHashMap<>();
-		BiFunction bifunction = null ;	// TODO
-		sourceSet.forEach(
-			element -> {
-				returnMap.merge(function.apply(element), sourceSet, bifunction);
-			}
-		);
-		return null;
+
+//ll;
 	}
 }
 

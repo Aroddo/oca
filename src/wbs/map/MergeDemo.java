@@ -2,6 +2,8 @@ package wbs.map;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.stream.Stream;
 
 public class MergeDemo {
@@ -69,5 +71,8 @@ public class MergeDemo {
 		// NullPointerException
 		// key vorhanden, p2 != null:
 		// bifunction(oldValue, p2) wird zum neuen wert
+
+		Set<Integer> s = new TreeSet<>().add(2);
+		System.out.println(s);
 	}
 }

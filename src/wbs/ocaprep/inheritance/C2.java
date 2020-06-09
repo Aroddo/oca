@@ -11,6 +11,13 @@ package wbs.ocaprep.inheritance;
  * 3. exceptions: 
  * 4. output:
  */
- 
+// 		sourceSet.forEach(
+//			element -> {
+//				returnMap.merge(function.apply(element), new TreeSet<T>().add(element) ., (oldElement,givenSet) -> {
+//					oldSet.add(givenSet.i)
+//				})
+//			}
+//		);
+//		return nu
 protected class C2 {
 }
