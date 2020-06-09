@@ -52,11 +52,6 @@ public class AverageDemo {
 		System.out.println(SetUtil.average(bausteinPruefungen, f -> f.note));
 		System.out.println(SetUtil.average(einwohner, f -> f.alter));
 		System.out.println(SetUtil.average(pkws, f -> f.leistung));
-		
-		
-		
-		
-		
 	}
 
 }

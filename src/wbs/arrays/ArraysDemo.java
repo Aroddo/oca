@@ -1,6 +1,7 @@
 package wbs.arrays;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Vector;
 
 public class ArraysDemo {
@@ -13,7 +14,7 @@ public class ArraysDemo {
 		a1 = new int[5];
 		System.out.println(a1[0]); // 0
 
-		a2 = a1;
+		a2 = a1; 
 		
 		int[] a3 = { 1, 2, 3, 4, 5 };
 		String[] a4 = { "blabla", "lalla", "gaga" };
@@ -45,8 +46,9 @@ public class ArraysDemo {
 		System.out.println(strings[2]); // null
 
 		Integer[] ia51 = { 1, 2, 3, 4, 5 };
-		int[] ia52 = { 1, 2, 3, 4, 5 };
-
+		int ia52[] = { 1, 2, 3, 4, 5,3,4,5 };
+ 
+		
 		String[][] ssa = new String[5][]; // ok.
 		for (int i = 0; i < 5; i++) {
 			ssa[i] = new String[i];
@@ -62,5 +64,11 @@ public class ArraysDemo {
 		int[] ia62 = { 1, 2, 3 };
 		System.out.println(ia61.equals(ia62)); // false
 		System.out.println(Arrays.equals(ia61, ia62)); // true
+		
+		
+		int[] iii = new int[5];
+		System.out.println(iii[0]);
+		
+		char[][] ca = {{'1','2','3'},{'1','2','3'}};
 	}
 }
