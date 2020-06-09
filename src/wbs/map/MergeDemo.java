@@ -72,7 +72,8 @@ public class MergeDemo {
 		// key vorhanden, p2 != null:
 		// bifunction(oldValue, p2) wird zum neuen wert
 
-		Set<Integer> s = new TreeSet<>().add(2);
-		System.out.println(s);
+		Set<Integer> mySet = new TreeSet<>() ;
+		mySet.add(2);
+		System.out.println(mySet);
 	}
 }
