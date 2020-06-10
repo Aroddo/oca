@@ -24,7 +24,7 @@ public class GroupingByDemo {
 		Set<Abgeordneter> abgeordnetenSet = new TreeSet<>();	// Initialisierung des Abgeordneten-Sets
 		Map<String, Set<Abgeordneter>> abgeordnetenMap = 		// Initialisierung der Map
 				new LinkedHashMap<>();							// key ist Partei,
-																	// value ist Set von Abgeordneten
+																// value ist Set von Abgeordneten
 
 		abgeordnetenSet.add(new Abgeordneter("A1", "CDU"));		// Erzeugung von Abgeordneten
 		abgeordnetenSet.add(new Abgeordneter("A2", "CDU"));
@@ -51,8 +51,6 @@ public class GroupingByDemo {
 		System.out.println();	
 	}
 	
-	
-
 	public static <K,T> Map<K, Set<T>> groupBy(Set<T> sourceSet, Function<T, K> function) {
 		Map<K, Set<T>> returnMap = new LinkedHashMap<>();			// Initialisierung der Ergebnis-Map
 		
@@ -101,6 +99,5 @@ class Wahlberechtigter implements Comparable<Wahlberechtigter> {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	
 }
 
