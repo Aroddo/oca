@@ -51,6 +51,7 @@ public class GroupingByDemo {
 		System.out.println();
 		
 	}
+	
 
 	public static <K,T> Map<K, Set<T>> groupBy(Set<T> sourceSet, Function<T, K> function) {
 		Map<K, Set<T>> returnMap = new LinkedHashMap<>();			// Initialisierung der Ergebnis-Map
