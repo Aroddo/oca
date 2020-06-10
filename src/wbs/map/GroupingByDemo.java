@@ -48,7 +48,7 @@ public class GroupingByDemo {
 		for (int i = 100; i <= 200; i++) { zahlenSet.add(i); }
 		zahlenMap = groupBy(zahlenSet, zahl -> wbs.util.NumberUtil.querSumme(zahl));
 		zahlenMap.forEach((k, v) -> System.out.println("Queersumme: " + k + " : " + v)); 
-		System.out.println();
+		System.out.println();	
 		
 	}
 	
