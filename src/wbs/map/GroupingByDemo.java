@@ -29,38 +29,40 @@ public class GroupingByDemo {
 		abgeordnetenSet.add(new Abgeordneter("A1", "CDU"));		// Erzeugung von Abgeordneten
 		abgeordnetenSet.add(new Abgeordneter("A2", "CDU"));
 		abgeordnetenSet.add(new Abgeordneter("A3", "SPD"));
-		abgeordnetenSet.add(new Abgeordneter("A4", "Grüne"));
+		abgeordnetenSet.add(new Abgeordneter("A4", "GrÃ¼ne"));
 		abgeordnetenSet.add(new Abgeordneter("A5", "CDU"));
 		abgeordnetenSet.add(new Abgeordneter("A6", "SPD"));
 		abgeordnetenSet.add(new Abgeordneter("A7", "FDP"));
-		abgeordnetenSet.add(new Abgeordneter("A8", "Grüne"));
+		abgeordnetenSet.add(new Abgeordneter("A8", "GrÃ¼ne"));
 
 		abgeordnetenMap = groupBy(abgeordnetenSet, 			// Aufruf der groupBy-Methode
-				abgeordneter -> abgeordneter.getPartei());	// Das Function-Lambda liefert Key für die Map
+				abgeordneter -> abgeordneter.getPartei());	// Das Function-Lambda liefert Key fÃ¼r die Map
 
 		abgeordnetenMap.forEach((k, v) -> System.out.println("Partei: " + k  + v + "\n"));	// Ausgabe der Map
 
-		
 		// GroupBy mit Quersumme-Integern
 		Set<Integer> zahlenSet = new TreeSet<>();	// Initialisierung des Zahlen-Sets
 		Map<Integer, Set<Integer>> zahlenMap = 		// Initialisierung der Map
 				new LinkedHashMap<>();				// key ist Quersumme,
 													// value ist Set von Zahlen
-		for (int i = 100; i < 200; i++) { zahlenSet.add(i); }
+		for (int i = 100; i <= 200; i++) { zahlenSet.add(i); }
 		zahlenMap = groupBy(zahlenSet, zahl -> wbs.util.NumberUtil.querSumme(zahl));
 		zahlenMap.forEach((k, v) -> System.out.println("Queersumme: " + k + " : " + v)); 
+		System.out.println();
 	}
 
 	public static <K,T> Map<K, Set<T>> groupBy(Set<T> sourceSet, Function<T, K> function) {
-		Map<K, Set<T>> returnMap = new LinkedHashMap<>();	// Initialisierung der Ergebnis-Map
-
-		sourceSet.forEach(element -> {							// iteration über alle elemente des Quell-Sets
-			returnMap.compute(function.apply(element), (key, set) -> {	// mappe element mit Function-Lambda.
-				if (set == null) 								// falls key noch nicht existiert
-					set = new TreeSet<>();						// dann erzeuge neues set für map-value
-				set.add(element);								// füge element zu altem oder neuem set an
-				return set;										// rückgabe des sets. referenz wird auf key gemappt
-			});
+		Map<K, Set<T>> returnMap = new LinkedHashMap<>();			// Initialisierung der Ergebnis-Map
+		
+		sourceSet.forEach(element -> {								// iteration Ã¼ber alle elemente des Quell-Sets
+			returnMap.compute(function.apply(element), 				// mappe element mit Function-Lambda.
+				(key, set) -> {										// key vom Typ K, set mit Typ T. Durch compute zugewiesen.
+					if (set == null) 								// falls key noch nicht existiert
+						set = new TreeSet<>();						// dann erzeuge neues set fÃ¼r map-value
+					set.add(element);								// fÃ¼ge element zu altem oder neuem set an
+					return set;										// rÃ¼ckgabe des sets. referenz wird auf key gemappt
+				}
+			);
 		});
 		return returnMap;
 	}
@@ -89,3 +91,14 @@ class Abgeordneter implements Comparable<Abgeordneter> {
 	public String getName() { return name; }
 	public void setName(String name) { this.name = name; }
 }
+
+class Wahlberechtigter implements Comparable<Wahlberechtigter> {
+
+	@Override
+	public int compareTo(Wahlberechtigter o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+}
+

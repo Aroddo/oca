@@ -11,6 +11,8 @@ public class InstantDemo {
 		Instant i2 = Instant.now();
 		Duration duration = Duration.between(i1, i2);
 		System.out.println(duration); // PT1S
+		
+		System.out.println(new Object().toString());
 // ok
 		System.out.println(i1.plus(1, ChronoUnit.DAYS));
 // 2018-06-06T18:18:56.520Z
